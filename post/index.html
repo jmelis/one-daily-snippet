@@ -55,24 +55,44 @@
             
             <div class="posts">
                 
-                <h1 class="content-subhead">28 Jul 2016, 00:01</h1>
+                <h1 class="content-subhead">28 Jul 2016, 00:21</h1>
                 <section class="post">
                     <header class="post-header">
 
-                        <a href="https://jmelis.github.io/one-daily-snippet/post/test/" class="post-title">test</a>
+                        <a href="https://jmelis.github.io/one-daily-snippet/post/git-prepare-commit-msg/" class="post-title">git prepare commit msg</a>
 
                         <p class="post-meta">
                             
                             
-                                under 
                                 
-                                
+                                <a class="post-category post-category-git" href="https://jmelis.github.io/one-daily-snippet/categories/git">git</a>
                             
                         </p>
                     </header>
 
                     <div class="post-description">
-                        
+                        <pre><code class="language-sh">#!/bin/sh
+
+BRANCH_NAME=$(git symbolic-ref --short HEAD)
+
+if [[ $BRANCH_NAME != bug-* ]] &amp;&amp; [[ $BRANCH_NAME != feature-* ]]; then
+    exit 0
+fi
+
+FIRST_LINE_COMMIT=$(head -n1 $1)
+
+case $FIRST_LINE_COMMIT in
+bug*|Bug*|feature*|Feature*)
+    exit 0
+    ;;
+esac
+
+LABEL=$(echo $BRANCH_NAME|sed 's/-/ #/')
+LABEL=${LABEL^}
+
+sed -i -e &quot;1s/^/${LABEL}: /&quot; $1
+</code></pre>
+
                     </div>
                 </section>
                 

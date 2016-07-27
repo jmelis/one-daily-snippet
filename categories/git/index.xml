@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>ONE Daily Snippet</title>
-    <link>https://jmelis.github.io/one-daily-snippet/</link>
-    <description>Recent content on ONE Daily Snippet</description>
+    <title>Git on ONE Daily Snippet</title>
+    <link>https://jmelis.github.io/one-daily-snippet/categories/git/</link>
+    <description>Recent content in Git on ONE Daily Snippet</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Thu, 28 Jul 2016 00:21:03 +0200</lastBuildDate>
-    <atom:link href="https://jmelis.github.io/one-daily-snippet/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://jmelis.github.io/one-daily-snippet/categories/git/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>git prepare commit msg</title>
@@ -35,17 +35,6 @@ LABEL=$(echo $BRANCH_NAME|sed &#39;s/-/ #/&#39;)
 LABEL=${LABEL^}
 
 sed -i -e &amp;quot;1s/^/${LABEL}: /&amp;quot; $1
-&lt;/code&gt;&lt;/pre&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>Generate /etc/hosts</title>
-      <link>https://jmelis.github.io/one-daily-snippet/generate-etc-hosts/</link>
-      <pubDate>Wed, 27 Jul 2016 19:15:11 +0200</pubDate>
-      
-      <guid>https://jmelis.github.io/one-daily-snippet/generate-etc-hosts/</guid>
-      <description>&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;onevm list -l ID,NAME,IP,STAT --csv|sed 1d|column -ts,|awk &#39;{print $3, $2}&#39;
 &lt;/code&gt;&lt;/pre&gt;
 </description>
     </item>
