@@ -39,5 +39,16 @@ sed -i -e &amp;quot;1s/^/${LABEL}: /&amp;quot; $1
 </description>
     </item>
     
+    <item>
+      <title>Generate /etc/hosts</title>
+      <link>https://jmelis.github.io/one-daily-snippet/post/generate-etc-hosts/</link>
+      <pubDate>Wed, 27 Jul 2016 19:15:11 +0200</pubDate>
+      
+      <guid>https://jmelis.github.io/one-daily-snippet/post/generate-etc-hosts/</guid>
+      <description>&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;onevm list -l ID,NAME,IP,STAT --csv|sed 1d|column -ts,|awk &#39;{print $3, $2}&#39;
+&lt;/code&gt;&lt;/pre&gt;
+</description>
+    </item>
+    
   </channel>
 </rss>

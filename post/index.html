@@ -41,9 +41,7 @@
             <ul class="nav-list">
                 
                 
-                <li class="nav-item">
-                    <a class="pure-button" href="https://jmelis.github.io/one-daily-snippetindex.xml"><i class="fa fa-rss"></i> rss</a>
-                </li>
+                
             </ul>
         </nav>
     </div>
@@ -91,6 +89,25 @@ LABEL=$(echo $BRANCH_NAME|sed 's/-/ #/')
 LABEL=${LABEL^}
 
 sed -i -e &quot;1s/^/${LABEL}: /&quot; $1
+</code></pre>
+
+                    </div>
+                </section>
+                
+                <h1 class="content-subhead">27 Jul 2016, 19:15</h1>
+                <section class="post">
+                    <header class="post-header">
+
+                        <a href="https://jmelis.github.io/one-daily-snippet/post/generate-etc-hosts/" class="post-title">Generate /etc/hosts</a>
+
+                        <p class="post-meta">
+                            
+                            
+                        </p>
+                    </header>
+
+                    <div class="post-description">
+                        <pre><code class="language-bash">onevm list -l ID,NAME,IP,STAT --csv|sed 1d|column -ts,|awk '{print $3, $2}'
 </code></pre>
 
                     </div>
