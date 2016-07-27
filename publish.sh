@@ -4,9 +4,9 @@ gs=$(git status --porcelain)
 
 commit=$(git rev-parse --short HEAD)
 
-hugo -d ../one-daily-snippet-public
+hugo -d ../gh-pages
 
-cd ../one-daily-snippet-public
+cd ../gh-pages
 
 git add -A .
 git commit -F- <<EOF
