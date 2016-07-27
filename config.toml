@@ -1,4 +1,4 @@
-baseurl = "http://jmelis.github.io/one-daily-snippet"
+baseurl = "https://jmelis.github.io/one-daily-snippet"
 languageCode = "en-us"
 title = "ONE Daily Snippet"
 theme = "purehugo"
