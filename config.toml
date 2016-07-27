@@ -4,5 +4,5 @@ title = "ONE Daily Snippet"
 theme = "purehugo"
 
 [params]
-
 hideShareOptions = true
+description = "The developer's heaven"
