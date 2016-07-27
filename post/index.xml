@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Posts on ONE Daily Snippet</title>
+    <link>https://jmelis.github.io/one-daily-snippet/post/</link>
+    <description>Recent content in Posts on ONE Daily Snippet</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Thu, 28 Jul 2016 00:01:52 +0200</lastBuildDate>
+    <atom:link href="https://jmelis.github.io/one-daily-snippet/post/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>test</title>
+      <link>https://jmelis.github.io/one-daily-snippet/post/test/</link>
+      <pubDate>Thu, 28 Jul 2016 00:01:52 +0200</pubDate>
+      
+      <guid>https://jmelis.github.io/one-daily-snippet/post/test/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

@@ -6,8 +6,17 @@
     <description>Recent content on ONE Daily Snippet</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 27 Jul 2016 19:15:11 +0200</lastBuildDate>
+    <lastBuildDate>Thu, 28 Jul 2016 00:01:52 +0200</lastBuildDate>
     <atom:link href="https://jmelis.github.io/one-daily-snippet/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>test</title>
+      <link>https://jmelis.github.io/one-daily-snippet/post/test/</link>
+      <pubDate>Thu, 28 Jul 2016 00:01:52 +0200</pubDate>
+      
+      <guid>https://jmelis.github.io/one-daily-snippet/post/test/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>Generate /etc/hosts</title>
