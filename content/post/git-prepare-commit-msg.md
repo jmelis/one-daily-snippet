@@ -3,8 +3,10 @@ Categories = ["git"]
 Description = ""
 date = "2016-07-28T00:21:03+02:00"
 title = "git prepare commit msg"
-
+author = "Jaime Melis"
 +++
+
+Forget about adding *feature #blablabla* to every single commit! and it's free!
 
 ```sh
 #!/bin/sh
