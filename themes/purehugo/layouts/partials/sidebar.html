@@ -20,6 +20,11 @@
                 <!-- <li class="nav-item">
                     <a class="pure-button" href="{{ .Site.BaseURL }}/index.xml"><i class="fa fa-rss"></i> rss</a>
                 </li> -->
+                {{ range where .Site.Pages "Section" "page" }}
+                <li class="nav-item">
+                    <a class="pure-button" href="{{ .Permalink }}">{{ .Title }}</a>
+                </li>
+                {{ end }}
             </ul>
         </nav>
     </div>
