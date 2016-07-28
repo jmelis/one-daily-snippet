@@ -6,8 +6,90 @@
     <description>Recent content on ONE Daily Snippet</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 28 Jul 2016 10:07:42 +0200</lastBuildDate>
+    <lastBuildDate>Thu, 28 Jul 2016 10:47:17 +0200</lastBuildDate>
     <atom:link href="https://jmelis.github.io/one-daily-snippet/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>onepry</title>
+      <link>https://jmelis.github.io/one-daily-snippet/post/onepry/</link>
+      <pubDate>Thu, 28 Jul 2016 10:47:17 +0200</pubDate>
+      
+      <guid>https://jmelis.github.io/one-daily-snippet/post/onepry/</guid>
+      <description>&lt;p&gt;We can fire up &lt;a href=&#34;https://github.com/pry/pry&#34;&gt;pry&lt;/a&gt; with the OpenNebula libraries to debug it more easily:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-ruby&#34;&gt;#!/usr/bin/ruby
+
+ONE_LOCATION=ENV[&amp;quot;ONE_LOCATION&amp;quot;]
+
+if !ONE_LOCATION
+    RUBY_LIB_LOCATION=&amp;quot;/usr/lib/one/ruby&amp;quot;
+    VAR_LOCATION = &amp;quot;/var/lib/one&amp;quot;
+    LIB_LOCATION = &amp;quot;/usr/lib/one&amp;quot;
+    ETC_LOCATION = &amp;quot;/etc/one&amp;quot;
+else
+    RUBY_LIB_LOCATION=ONE_LOCATION+&amp;quot;/lib/ruby&amp;quot;
+    VAR_LOCATION = ONE_LOCATION+&amp;quot;/var&amp;quot;
+    LIB_LOCATION = ONE_LOCATION+&amp;quot;/lib&amp;quot;
+    ETC_LOCATION = ONE_LOCATION + &amp;quot;/etc&amp;quot;
+end
+
+$: &amp;lt;&amp;lt; RUBY_LIB_LOCATION
+$: &amp;lt;&amp;lt; RUBY_LIB_LOCATION+&amp;quot;/cloud&amp;quot; # For the Repository Manager
+$: &amp;lt;&amp;lt; RUBY_LIB_LOCATION+&amp;quot;/cli&amp;quot; # For the Repository Manager
+$: &amp;lt;&amp;lt; LIB_LOCATION+&#39;/oneflow/lib&#39;
+
+################################################
+# Required libraries
+################################################
+require &#39;yaml&#39;
+require &#39;erb&#39;
+require &#39;tempfile&#39;
+require &#39;fileutils&#39;
+require &#39;json&#39;
+
+require &#39;opennebula&#39;
+include OpenNebula
+
+require &#39;pp&#39;
+
+if ENV[&#39;ONE_AUTH&#39;]
+    authfile = ENV[&#39;ONE_AUTH&#39;]
+else
+    authfile = &amp;quot;#{ENV[&#39;HOME&#39;]}/.one/one_auth&amp;quot;
+end
+
+@client = Client.new
+
+module OpenNebula
+    class XMLElement
+        def self.from_xml(s)
+            m = s.match(/^&amp;lt;(\w+)&amp;gt;/)
+            root_element = m[1]
+
+            elem = XMLElement.new
+            elem.initialize_xml(s, root_element)
+            return elem
+        end
+    end
+end
+
+version = &amp;quot;&amp;gt;= 0&amp;quot;
+gem &#39;pry&#39;, version
+load Gem.bin_path(&#39;pry&#39;, &#39;pry&#39;, version)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Example:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-ruby&#34;&gt;$ onepry
+[1] pry(main)&amp;gt; vm=VirtualMachine.new_with_id(114,@client);
+[2] pry(main)&amp;gt; vm.info;
+[3] pry(main)&amp;gt; vm[&#39;NAME&#39;]
+=&amp;gt; &amp;quot;ha-0&amp;quot;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;(by adding &lt;strong&gt;;&lt;/strong&gt; to the commands the return object is not displayed. A tip within a tip, yo dawg.)&lt;/p&gt;
+</description>
+    </item>
     
     <item>
       <title>a better onevm list</title>

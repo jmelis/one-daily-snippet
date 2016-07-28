@@ -53,6 +53,101 @@
             
             <div class="posts">
                 
+                <h1 class="content-subhead">28 Jul 2016, 10:47</h1>
+                <section class="post">
+                    <header class="post-header">
+
+                        <a href="https://jmelis.github.io/one-daily-snippet/post/onepry/" class="post-title">onepry</a>
+
+                        <p class="post-meta">
+                            
+                                By <strong class="post-author">Jaime Melis</strong>
+                            
+                            
+                                
+                                <a class="post-category post-category-cli" href="https://jmelis.github.io/one-daily-snippet/categories/cli">cli</a>
+                            
+                        </p>
+                    </header>
+
+                    <div class="post-description">
+                        <p>We can fire up <a href="https://github.com/pry/pry">pry</a> with the OpenNebula libraries to debug it more easily:</p>
+
+<pre><code class="language-ruby">#!/usr/bin/ruby
+
+ONE_LOCATION=ENV[&quot;ONE_LOCATION&quot;]
+
+if !ONE_LOCATION
+    RUBY_LIB_LOCATION=&quot;/usr/lib/one/ruby&quot;
+    VAR_LOCATION = &quot;/var/lib/one&quot;
+    LIB_LOCATION = &quot;/usr/lib/one&quot;
+    ETC_LOCATION = &quot;/etc/one&quot;
+else
+    RUBY_LIB_LOCATION=ONE_LOCATION+&quot;/lib/ruby&quot;
+    VAR_LOCATION = ONE_LOCATION+&quot;/var&quot;
+    LIB_LOCATION = ONE_LOCATION+&quot;/lib&quot;
+    ETC_LOCATION = ONE_LOCATION + &quot;/etc&quot;
+end
+
+$: &lt;&lt; RUBY_LIB_LOCATION
+$: &lt;&lt; RUBY_LIB_LOCATION+&quot;/cloud&quot; # For the Repository Manager
+$: &lt;&lt; RUBY_LIB_LOCATION+&quot;/cli&quot; # For the Repository Manager
+$: &lt;&lt; LIB_LOCATION+'/oneflow/lib'
+
+################################################
+# Required libraries
+################################################
+require 'yaml'
+require 'erb'
+require 'tempfile'
+require 'fileutils'
+require 'json'
+
+require 'opennebula'
+include OpenNebula
+
+require 'pp'
+
+if ENV['ONE_AUTH']
+    authfile = ENV['ONE_AUTH']
+else
+    authfile = &quot;#{ENV['HOME']}/.one/one_auth&quot;
+end
+
+@client = Client.new
+
+module OpenNebula
+    class XMLElement
+        def self.from_xml(s)
+            m = s.match(/^&lt;(\w+)&gt;/)
+            root_element = m[1]
+
+            elem = XMLElement.new
+            elem.initialize_xml(s, root_element)
+            return elem
+        end
+    end
+end
+
+version = &quot;&gt;= 0&quot;
+gem 'pry', version
+load Gem.bin_path('pry', 'pry', version)
+</code></pre>
+
+<p>Example:</p>
+
+<pre><code class="language-ruby">$ onepry
+[1] pry(main)&gt; vm=VirtualMachine.new_with_id(114,@client);
+[2] pry(main)&gt; vm.info;
+[3] pry(main)&gt; vm['NAME']
+=&gt; &quot;ha-0&quot;
+</code></pre>
+
+<p>(by adding <strong>;</strong> to the commands the return object is not displayed. A tip within a tip, yo dawg.)</p>
+
+                    </div>
+                </section>
+                
                 <h1 class="content-subhead">28 Jul 2016, 10:07</h1>
                 <section class="post">
                     <header class="post-header">
