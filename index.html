@@ -5,17 +5,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ONE Daily Snippet &middot; ONE Daily Snippet</title>
 
-    <meta name="description" content="The developer&#39;s heaven">
+    <meta name="description" content="compiled by Bobby Tables">
 
     <meta name="generator" content="Hugo 0.16" />
     <meta name="twitter:card" content="summary">
     
     <meta name="twitter:title" content="ONE Daily Snippet &middot; ONE Daily Snippet">
-    <meta name="twitter:description" content="The developer&#39;s heaven">
+    <meta name="twitter:description" content="compiled by Bobby Tables">
 
     <meta property="og:type" content="article">
     <meta property="og:title" content="ONE Daily Snippet &middot; ONE Daily Snippet">
-    <meta property="og:description" content="The developer&#39;s heaven">
+    <meta property="og:description" content="compiled by Bobby Tables">
 
     <link href='//fonts.googleapis.com/css?family=Source+Sans+Pro:400,700|Oxygen:400,700' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/pure/0.6.0/pure-min.css">
@@ -34,7 +34,7 @@
     <div class="header">
         <hgroup>
             <h1 class="brand-title"><a href="https://jmelis.github.io/one-daily-snippet">ONE Daily Snippet</a></h1>
-            <h2 class="brand-tagline"> The developer&#39;s heaven </h2>
+            <h2 class="brand-tagline"> compiled by Bobby Tables </h2>
         </hgroup>
 
         <nav class="nav">
@@ -53,6 +53,88 @@
             
             <div class="posts">
                 
+                <h1 class="content-subhead">28 Jul 2016, 10:07</h1>
+                <section class="post">
+                    <header class="post-header">
+
+                        <a href="https://jmelis.github.io/one-daily-snippet/post/a-better-onevm-list/" class="post-title">a better onevm list</a>
+
+                        <p class="post-meta">
+                            
+                                By <strong class="post-author">Jaime Melis</strong>
+                            
+                            
+                                
+                                <a class="post-category post-category-cli" href="https://jmelis.github.io/one-daily-snippet/categories/cli">cli</a>
+                            
+                        </p>
+                    </header>
+
+                    <div class="post-description">
+                        <p>This is a more useful <code>onevm list</code>:</p>
+
+<pre><code class="language-sh">alias onevmll=&quot;onevm list -l ID,NAME,IP,STAT --csv|sed 1d|column -ts,&quot;
+</code></pre>
+
+<p>Example:</p>
+
+<pre><code class="language-sh">$ onevmll
+1673  sched-debug                    10.10.0.247   poff
+2644  migrator-4.14.2.devel          10.10.0.37    runn
+3480  ubuntu1404-upgrade-d1395.test  &quot;10.10.0.108  192.168.150.2&quot;  runn
+3488  cangallo                       10.10.0.116   runn
+4373  build-centos7-jaime.test       10.10.0.254   runn
+5169  ubuntu1604-upgrade-cf116.test  &quot;10.10.0.57   192.168.150.3&quot;  runn
+</code></pre>
+
+                    </div>
+                </section>
+                
+                <h1 class="content-subhead">28 Jul 2016, 09:46</h1>
+                <section class="post">
+                    <header class="post-header">
+
+                        <a href="https://jmelis.github.io/one-daily-snippet/post/ip-to-hex/" class="post-title">ip to hex</a>
+
+                        <p class="post-meta">
+                            
+                                By <strong class="post-author">Jaime Melis</strong>
+                            
+                            
+                                
+                                <a class="post-category post-category-cli" href="https://jmelis.github.io/one-daily-snippet/categories/cli">cli</a>
+                            
+                        </p>
+                    </header>
+
+                    <div class="post-description">
+                        <p>In order to convert MAC to IP and back, use the <code>ip_to_hex</code> tool:</p>
+
+<pre><code class="language-ruby">#!/usr/bin/env ruby
+
+MAC_PREFIX = &quot;02:00&quot;
+
+arg = ARGV[0]
+
+if arg.include? ':'
+    puts arg.split(':')[2..-1].collect{|i| i.to_i(16)}.join('.')
+else
+    mac = MAC_PREFIX + ':' + arg.split('.').collect{|i| sprintf(&quot;%02X&quot;,i)}.join(':')
+    puts mac
+end
+</code></pre>
+
+<p>Usage:</p>
+
+<pre><code class="language-bash">➜  ~  ip_to_hex 192.168.0.10
+02:00:C0:A8:00:0A
+➜  ~  ip_to_hex 02:00:C0:A8:00:0A
+192.168.0.10
+</code></pre>
+
+                    </div>
+                </section>
+                
                 <h1 class="content-subhead">28 Jul 2016, 00:21</h1>
                 <section class="post">
                     <header class="post-header">
@@ -60,6 +142,8 @@
                         <a href="https://jmelis.github.io/one-daily-snippet/post/git-prepare-commit-msg/" class="post-title">git prepare commit msg</a>
 
                         <p class="post-meta">
+                            
+                                By <strong class="post-author">Jaime Melis</strong>
                             
                             
                                 
@@ -69,7 +153,9 @@
                     </header>
 
                     <div class="post-description">
-                        <pre><code class="language-sh">#!/bin/sh
+                        <p>Forget about adding <em>feature #blablabla</em> to every single commit! and it&rsquo;s free!</p>
+
+<pre><code class="language-sh">#!/bin/sh
 
 BRANCH_NAME=$(git symbolic-ref --short HEAD)
 
@@ -98,16 +184,32 @@ sed -i -e &quot;1s/^/${LABEL}: /&quot; $1
                 <section class="post">
                     <header class="post-header">
 
-                        <a href="https://jmelis.github.io/one-daily-snippet/post/generate-etc-hosts/" class="post-title">Generate /etc/hosts</a>
+                        <a href="https://jmelis.github.io/one-daily-snippet/post/generate-etc-hosts/" class="post-title">generate /etc/hosts</a>
 
                         <p class="post-meta">
                             
+                                By <strong class="post-author">Jaime Melis</strong>
+                            
+                            
+                                
+                                <a class="post-category post-category-cli" href="https://jmelis.github.io/one-daily-snippet/categories/cli">cli</a>
                             
                         </p>
                     </header>
 
                     <div class="post-description">
-                        <pre><code class="language-bash">onevm list -l ID,NAME,IP,STAT --csv|sed 1d|column -ts,|awk '{print $3, $2}'
+                        <p>If you ever need to generate quickly a snippet for <code>/etc/hosts</code></p>
+
+<pre><code class="language-sh">onevm list -l ID,NAME,IP,STAT --csv | sed 1d | column -ts, | tr -d '&quot;' | awk '{print $3, $2}' | column -t
+</code></pre>
+
+<p>Example:</p>
+
+<pre><code class="language-sh">10.10.0.37   migrator-4.14.2.devel
+10.10.0.108  ubuntu1404-upgrade-d1395.test
+10.10.0.116  cangallo
+10.10.0.254  build-centos7-jaime.test
+10.10.0.57   ubuntu1604-upgrade-cf116.test
 </code></pre>
 
                     </div>

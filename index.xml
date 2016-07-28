@@ -6,8 +6,64 @@
     <description>Recent content on ONE Daily Snippet</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 28 Jul 2016 00:21:03 +0200</lastBuildDate>
+    <lastBuildDate>Thu, 28 Jul 2016 10:07:42 +0200</lastBuildDate>
     <atom:link href="https://jmelis.github.io/one-daily-snippet/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>a better onevm list</title>
+      <link>https://jmelis.github.io/one-daily-snippet/post/a-better-onevm-list/</link>
+      <pubDate>Thu, 28 Jul 2016 10:07:42 +0200</pubDate>
+      
+      <guid>https://jmelis.github.io/one-daily-snippet/post/a-better-onevm-list/</guid>
+      <description>&lt;p&gt;This is a more useful &lt;code&gt;onevm list&lt;/code&gt;:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-sh&#34;&gt;alias onevmll=&amp;quot;onevm list -l ID,NAME,IP,STAT --csv|sed 1d|column -ts,&amp;quot;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Example:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-sh&#34;&gt;$ onevmll
+1673  sched-debug                    10.10.0.247   poff
+2644  migrator-4.14.2.devel          10.10.0.37    runn
+3480  ubuntu1404-upgrade-d1395.test  &amp;quot;10.10.0.108  192.168.150.2&amp;quot;  runn
+3488  cangallo                       10.10.0.116   runn
+4373  build-centos7-jaime.test       10.10.0.254   runn
+5169  ubuntu1604-upgrade-cf116.test  &amp;quot;10.10.0.57   192.168.150.3&amp;quot;  runn
+&lt;/code&gt;&lt;/pre&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>ip to hex</title>
+      <link>https://jmelis.github.io/one-daily-snippet/post/ip-to-hex/</link>
+      <pubDate>Thu, 28 Jul 2016 09:46:08 +0200</pubDate>
+      
+      <guid>https://jmelis.github.io/one-daily-snippet/post/ip-to-hex/</guid>
+      <description>&lt;p&gt;In order to convert MAC to IP and back, use the &lt;code&gt;ip_to_hex&lt;/code&gt; tool:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-ruby&#34;&gt;#!/usr/bin/env ruby
+
+MAC_PREFIX = &amp;quot;02:00&amp;quot;
+
+arg = ARGV[0]
+
+if arg.include? &#39;:&#39;
+    puts arg.split(&#39;:&#39;)[2..-1].collect{|i| i.to_i(16)}.join(&#39;.&#39;)
+else
+    mac = MAC_PREFIX + &#39;:&#39; + arg.split(&#39;.&#39;).collect{|i| sprintf(&amp;quot;%02X&amp;quot;,i)}.join(&#39;:&#39;)
+    puts mac
+end
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Usage:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;➜  ~  ip_to_hex 192.168.0.10
+02:00:C0:A8:00:0A
+➜  ~  ip_to_hex 02:00:C0:A8:00:0A
+192.168.0.10
+&lt;/code&gt;&lt;/pre&gt;
+</description>
+    </item>
     
     <item>
       <title>git prepare commit msg</title>
@@ -15,7 +71,9 @@
       <pubDate>Thu, 28 Jul 2016 00:21:03 +0200</pubDate>
       
       <guid>https://jmelis.github.io/one-daily-snippet/post/git-prepare-commit-msg/</guid>
-      <description>&lt;pre&gt;&lt;code class=&#34;language-sh&#34;&gt;#!/bin/sh
+      <description>&lt;p&gt;Forget about adding &lt;em&gt;feature #blablabla&lt;/em&gt; to every single commit! and it&amp;rsquo;s free!&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-sh&#34;&gt;#!/bin/sh
 
 BRANCH_NAME=$(git symbolic-ref --short HEAD)
 
@@ -40,12 +98,23 @@ sed -i -e &amp;quot;1s/^/${LABEL}: /&amp;quot; $1
     </item>
     
     <item>
-      <title>Generate /etc/hosts</title>
+      <title>generate /etc/hosts</title>
       <link>https://jmelis.github.io/one-daily-snippet/post/generate-etc-hosts/</link>
       <pubDate>Wed, 27 Jul 2016 19:15:11 +0200</pubDate>
       
       <guid>https://jmelis.github.io/one-daily-snippet/post/generate-etc-hosts/</guid>
-      <description>&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;onevm list -l ID,NAME,IP,STAT --csv|sed 1d|column -ts,|awk &#39;{print $3, $2}&#39;
+      <description>&lt;p&gt;If you ever need to generate quickly a snippet for &lt;code&gt;/etc/hosts&lt;/code&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-sh&#34;&gt;onevm list -l ID,NAME,IP,STAT --csv | sed 1d | column -ts, | tr -d &#39;&amp;quot;&#39; | awk &#39;{print $3, $2}&#39; | column -t
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Example:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-sh&#34;&gt;10.10.0.37   migrator-4.14.2.devel
+10.10.0.108  ubuntu1404-upgrade-d1395.test
+10.10.0.116  cangallo
+10.10.0.254  build-centos7-jaime.test
+10.10.0.57   ubuntu1604-upgrade-cf116.test
 &lt;/code&gt;&lt;/pre&gt;
 </description>
     </item>

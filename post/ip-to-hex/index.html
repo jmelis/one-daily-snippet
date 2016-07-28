@@ -3,18 +3,18 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>generate /etc/hosts &middot; ONE Daily Snippet</title>
+    <title>ip to hex &middot; ONE Daily Snippet</title>
 
     <meta name="description" content="">
 
     <meta name="generator" content="Hugo 0.16" />
     <meta name="twitter:card" content="summary">
     
-    <meta name="twitter:title" content="generate /etc/hosts &middot; ONE Daily Snippet">
+    <meta name="twitter:title" content="ip to hex &middot; ONE Daily Snippet">
     <meta name="twitter:description" content="">
 
     <meta property="og:type" content="article">
-    <meta property="og:title" content="generate /etc/hosts &middot; ONE Daily Snippet">
+    <meta property="og:title" content="ip to hex &middot; ONE Daily Snippet">
     <meta property="og:description" content="">
 
     <link href='//fonts.googleapis.com/css?family=Source+Sans+Pro:400,700|Oxygen:400,700' rel='stylesheet' type='text/css'>
@@ -52,11 +52,11 @@
         <div>
             
             <div class="posts">
-                <h1 class="content-subhead">27 Jul 2016, 19:15</h1>
+                <h1 class="content-subhead">28 Jul 2016, 09:46</h1>
                 <section class="post">
                     <header class="post-header">
 
-                        <a href="https://jmelis.github.io/one-daily-snippet/post/generate-etc-hosts/" class="post-title">generate /etc/hosts</a>
+                        <a href="https://jmelis.github.io/one-daily-snippet/post/ip-to-hex/" class="post-title">ip to hex</a>
 
                         <p class="post-meta">
                             
@@ -70,18 +70,28 @@
                     </header>
                     
                     <div class="post-description">
-                        <p>If you ever need to generate quickly a snippet for <code>/etc/hosts</code></p>
+                        <p>In order to convert MAC to IP and back, use the <code>ip_to_hex</code> tool:</p>
 
-<pre><code class="language-sh">onevm list -l ID,NAME,IP,STAT --csv | sed 1d | column -ts, | tr -d '&quot;' | awk '{print $3, $2}' | column -t
+<pre><code class="language-ruby">#!/usr/bin/env ruby
+
+MAC_PREFIX = &quot;02:00&quot;
+
+arg = ARGV[0]
+
+if arg.include? ':'
+    puts arg.split(':')[2..-1].collect{|i| i.to_i(16)}.join('.')
+else
+    mac = MAC_PREFIX + ':' + arg.split('.').collect{|i| sprintf(&quot;%02X&quot;,i)}.join(':')
+    puts mac
+end
 </code></pre>
 
-<p>Example:</p>
+<p>Usage:</p>
 
-<pre><code class="language-sh">10.10.0.37   migrator-4.14.2.devel
-10.10.0.108  ubuntu1404-upgrade-d1395.test
-10.10.0.116  cangallo
-10.10.0.254  build-centos7-jaime.test
-10.10.0.57   ubuntu1604-upgrade-cf116.test
+<pre><code class="language-bash">➜  ~  ip_to_hex 192.168.0.10
+02:00:C0:A8:00:0A
+➜  ~  ip_to_hex 02:00:C0:A8:00:0A
+192.168.0.10
 </code></pre>
 
                     </div>

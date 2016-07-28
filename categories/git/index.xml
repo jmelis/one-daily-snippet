@@ -15,7 +15,9 @@
       <pubDate>Thu, 28 Jul 2016 00:21:03 +0200</pubDate>
       
       <guid>https://jmelis.github.io/one-daily-snippet/post/git-prepare-commit-msg/</guid>
-      <description>&lt;pre&gt;&lt;code class=&#34;language-sh&#34;&gt;#!/bin/sh
+      <description>&lt;p&gt;Forget about adding &lt;em&gt;feature #blablabla&lt;/em&gt; to every single commit! and it&amp;rsquo;s free!&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-sh&#34;&gt;#!/bin/sh
 
 BRANCH_NAME=$(git symbolic-ref --short HEAD)
 
