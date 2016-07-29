@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Ldap on ONE Daily Snippet</title>
+    <link>https://jmelis.github.io/one-daily-snippet/categories/ldap/</link>
+    <description>Recent content in Ldap on ONE Daily Snippet</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Fri, 29 Jul 2016 11:24:54 +0200</lastBuildDate>
+    <atom:link href="https://jmelis.github.io/one-daily-snippet/categories/ldap/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>ldapsearch</title>
+      <link>https://jmelis.github.io/one-daily-snippet/post/ldapsearch/</link>
+      <pubDate>Fri, 29 Jul 2016 11:24:54 +0200</pubDate>
+      
+      <guid>https://jmelis.github.io/one-daily-snippet/post/ldapsearch/</guid>
+      <description>&lt;p&gt;If you want to query the ldap server use this:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;ldapsearch -x -h zentyal-1678 -D &amp;quot;Administrator@opennebula.org&amp;quot; -W -b &amp;quot;cn=users,dc=opennebula,dc=org&amp;quot;
+&lt;/code&gt;&lt;/pre&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

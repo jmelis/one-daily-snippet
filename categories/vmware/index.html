@@ -3,19 +3,19 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>generate /etc/hosts &middot; ONE Daily Snippet</title>
+    <title>Vmware &middot; ONE Daily Snippet</title>
 
-    <meta name="description" content="">
+    <meta name="description" content="compiled by Bobby Tables">
 
     <meta name="generator" content="Hugo 0.16" />
     <meta name="twitter:card" content="summary">
     
-    <meta name="twitter:title" content="generate /etc/hosts &middot; ONE Daily Snippet">
-    <meta name="twitter:description" content="">
+    <meta name="twitter:title" content="Vmware &middot; ONE Daily Snippet">
+    <meta name="twitter:description" content="compiled by Bobby Tables">
 
     <meta property="og:type" content="article">
-    <meta property="og:title" content="generate /etc/hosts &middot; ONE Daily Snippet">
-    <meta property="og:description" content="">
+    <meta property="og:title" content="Vmware &middot; ONE Daily Snippet">
+    <meta property="og:description" content="compiled by Bobby Tables">
 
     <link href='//fonts.googleapis.com/css?family=Source+Sans+Pro:400,700|Oxygen:400,700' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/pure/0.6.0/pure-min.css">
@@ -53,42 +53,41 @@
         <div>
             
             <div class="posts">
-                <h1 class="content-subhead">27 Jul 2016, 19:15</h1>
+                
+                <h1 class="content-subhead">29 Jul 2016, 11:39</h1>
                 <section class="post">
                     <header class="post-header">
 
-                        <a href="https://jmelis.github.io/one-daily-snippet/post/generate-etc-hosts/" class="post-title">generate /etc/hosts</a>
+                        <a href="https://jmelis.github.io/one-daily-snippet/post/generate-ova/" class="post-title">generate and deploy OVAs</a>
 
                         <p class="post-meta">
                             
-                                By <strong class="post-author">Jaime Melis</strong>
-                            
                             
                                 
-                                <a class="post-category post-category-cli" href="https://jmelis.github.io/one-daily-snippet/categories/cli">cli</a>
+                                <a class="post-category post-category-vmware" href="https://jmelis.github.io/one-daily-snippet/categories/vmware">vmware</a>
                             
                         </p>
                     </header>
-                    
-                    <div class="post-description">
-                        <p>If you ever need to generate quickly a snippet for <code>/etc/hosts</code></p>
 
-<pre><code class="language-sh">onevm list -l ID,NAME,IP,STAT --csv | sed 1d | column -ts, | tr -d '&quot;' | awk '{print $3, $2}' | column -t
+                    <div class="post-description">
+                        <p>The sky is blue, the grass is green, and nobody likes the vCenter integration plugin. So let&rsquo;s manage OVFs from the command line using <a href="https://www.vmware.com/support/developer/ovf/">ovftool</a>.</p>
+
+<p>Creating an OVA:</p>
+
+<pre><code class="language-bash">ovftool &quot;vi://&lt;user&gt;:&lt;password&gt;@&lt;host&gt;/&lt;path&gt;/Datacenter/vm/vOneCloud-2.0.0-v5&quot; myova.ova
 </code></pre>
 
-<p>Example:</p>
+<p>Deploying an OVA:</p>
 
-<pre><code class="language-sh">10.10.0.37   migrator-4.14.2.devel
-10.10.0.108  ubuntu1404-upgrade-d1395.test
-10.10.0.116  cangallo
-10.10.0.254  build-centos7-jaime.test
-10.10.0.57   ubuntu1604-upgrade-cf116.test
+<pre><code class="language-bash">ovftool -ds=&lt;datastore&gt; -n=&quot;&lt;VM Name&gt;&quot; myova.ova &quot;vi://&lt;user&gt;:&lt;password&gt;@&lt;host&gt;/&lt;path&gt;/Datacenter/host/Cluster&quot;
 </code></pre>
 
                     </div>
-                    
                 </section>
+                
             </div>
+            
+
             <div class="footer">
     <div class="pure-menu pure-menu-horizontal pure-menu-open">
         <ul>
@@ -101,7 +100,6 @@
         </div>
     </div>
 </div>
-
 
 <script>
 (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){

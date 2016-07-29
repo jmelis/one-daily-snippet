@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Vmware on ONE Daily Snippet</title>
+    <link>https://jmelis.github.io/one-daily-snippet/categories/vmware/</link>
+    <description>Recent content in Vmware on ONE Daily Snippet</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Fri, 29 Jul 2016 11:39:17 +0200</lastBuildDate>
+    <atom:link href="https://jmelis.github.io/one-daily-snippet/categories/vmware/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>generate and deploy OVAs</title>
+      <link>https://jmelis.github.io/one-daily-snippet/post/generate-ova/</link>
+      <pubDate>Fri, 29 Jul 2016 11:39:17 +0200</pubDate>
+      
+      <guid>https://jmelis.github.io/one-daily-snippet/post/generate-ova/</guid>
+      <description>&lt;p&gt;The sky is blue, the grass is green, and nobody likes the vCenter integration plugin. So let&amp;rsquo;s manage OVFs from the command line using &lt;a href=&#34;https://www.vmware.com/support/developer/ovf/&#34;&gt;ovftool&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;Creating an OVA:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;ovftool &amp;quot;vi://&amp;lt;user&amp;gt;:&amp;lt;password&amp;gt;@&amp;lt;host&amp;gt;/&amp;lt;path&amp;gt;/Datacenter/vm/vOneCloud-2.0.0-v5&amp;quot; myova.ova
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Deploying an OVA:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;ovftool -ds=&amp;lt;datastore&amp;gt; -n=&amp;quot;&amp;lt;VM Name&amp;gt;&amp;quot; myova.ova &amp;quot;vi://&amp;lt;user&amp;gt;:&amp;lt;password&amp;gt;@&amp;lt;host&amp;gt;/&amp;lt;path&amp;gt;/Datacenter/host/Cluster&amp;quot;
+&lt;/code&gt;&lt;/pre&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -6,8 +6,41 @@
     <description>Recent content on ONE Daily Snippet</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 28 Jul 2016 10:47:17 +0200</lastBuildDate>
+    <lastBuildDate>Fri, 29 Jul 2016 11:39:17 +0200</lastBuildDate>
     <atom:link href="https://jmelis.github.io/one-daily-snippet/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>generate and deploy OVAs</title>
+      <link>https://jmelis.github.io/one-daily-snippet/post/generate-ova/</link>
+      <pubDate>Fri, 29 Jul 2016 11:39:17 +0200</pubDate>
+      
+      <guid>https://jmelis.github.io/one-daily-snippet/post/generate-ova/</guid>
+      <description>&lt;p&gt;The sky is blue, the grass is green, and nobody likes the vCenter integration plugin. So let&amp;rsquo;s manage OVFs from the command line using &lt;a href=&#34;https://www.vmware.com/support/developer/ovf/&#34;&gt;ovftool&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;Creating an OVA:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;ovftool &amp;quot;vi://&amp;lt;user&amp;gt;:&amp;lt;password&amp;gt;@&amp;lt;host&amp;gt;/&amp;lt;path&amp;gt;/Datacenter/vm/vOneCloud-2.0.0-v5&amp;quot; myova.ova
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Deploying an OVA:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;ovftool -ds=&amp;lt;datastore&amp;gt; -n=&amp;quot;&amp;lt;VM Name&amp;gt;&amp;quot; myova.ova &amp;quot;vi://&amp;lt;user&amp;gt;:&amp;lt;password&amp;gt;@&amp;lt;host&amp;gt;/&amp;lt;path&amp;gt;/Datacenter/host/Cluster&amp;quot;
+&lt;/code&gt;&lt;/pre&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>ldapsearch</title>
+      <link>https://jmelis.github.io/one-daily-snippet/post/ldapsearch/</link>
+      <pubDate>Fri, 29 Jul 2016 11:24:54 +0200</pubDate>
+      
+      <guid>https://jmelis.github.io/one-daily-snippet/post/ldapsearch/</guid>
+      <description>&lt;p&gt;If you want to query the ldap server use this:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;ldapsearch -x -h zentyal-1678 -D &amp;quot;Administrator@opennebula.org&amp;quot; -W -b &amp;quot;cn=users,dc=opennebula,dc=org&amp;quot;
+&lt;/code&gt;&lt;/pre&gt;
+</description>
+    </item>
     
     <item>
       <title>onepry</title>

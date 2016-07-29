@@ -42,6 +42,7 @@
                 
                 
                 
+                
             </ul>
         </nav>
     </div>
@@ -52,6 +53,61 @@
         <div>
             
             <div class="posts">
+                
+                <h1 class="content-subhead">29 Jul 2016, 11:39</h1>
+                <section class="post">
+                    <header class="post-header">
+
+                        <a href="https://jmelis.github.io/one-daily-snippet/post/generate-ova/" class="post-title">generate and deploy OVAs</a>
+
+                        <p class="post-meta">
+                            
+                            
+                                
+                                <a class="post-category post-category-vmware" href="https://jmelis.github.io/one-daily-snippet/categories/vmware">vmware</a>
+                            
+                        </p>
+                    </header>
+
+                    <div class="post-description">
+                        <p>The sky is blue, the grass is green, and nobody likes the vCenter integration plugin. So let&rsquo;s manage OVFs from the command line using <a href="https://www.vmware.com/support/developer/ovf/">ovftool</a>.</p>
+
+<p>Creating an OVA:</p>
+
+<pre><code class="language-bash">ovftool &quot;vi://&lt;user&gt;:&lt;password&gt;@&lt;host&gt;/&lt;path&gt;/Datacenter/vm/vOneCloud-2.0.0-v5&quot; myova.ova
+</code></pre>
+
+<p>Deploying an OVA:</p>
+
+<pre><code class="language-bash">ovftool -ds=&lt;datastore&gt; -n=&quot;&lt;VM Name&gt;&quot; myova.ova &quot;vi://&lt;user&gt;:&lt;password&gt;@&lt;host&gt;/&lt;path&gt;/Datacenter/host/Cluster&quot;
+</code></pre>
+
+                    </div>
+                </section>
+                
+                <h1 class="content-subhead">29 Jul 2016, 11:24</h1>
+                <section class="post">
+                    <header class="post-header">
+
+                        <a href="https://jmelis.github.io/one-daily-snippet/post/ldapsearch/" class="post-title">ldapsearch</a>
+
+                        <p class="post-meta">
+                            
+                            
+                                
+                                <a class="post-category post-category-ldap" href="https://jmelis.github.io/one-daily-snippet/categories/ldap">ldap</a>
+                            
+                        </p>
+                    </header>
+
+                    <div class="post-description">
+                        <p>If you want to query the ldap server use this:</p>
+
+<pre><code class="language-bash">ldapsearch -x -h zentyal-1678 -D &quot;Administrator@opennebula.org&quot; -W -b &quot;cn=users,dc=opennebula,dc=org&quot;
+</code></pre>
+
+                    </div>
+                </section>
                 
                 <h1 class="content-subhead">28 Jul 2016, 10:47</h1>
                 <section class="post">
