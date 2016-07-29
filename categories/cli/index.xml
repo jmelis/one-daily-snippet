@@ -52,12 +52,6 @@ include OpenNebula
 
 require &#39;pp&#39;
 
-if ENV[&#39;ONE_AUTH&#39;]
-    authfile = ENV[&#39;ONE_AUTH&#39;]
-else
-    authfile = &amp;quot;#{ENV[&#39;HOME&#39;]}/.one/one_auth&amp;quot;
-end
-
 @client = Client.new
 
 module OpenNebula
