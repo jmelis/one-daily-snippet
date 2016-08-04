@@ -8,6 +8,9 @@ title = "libguestfs"
 
 This post is intended to be a guide to some common operations with libguestfs. It will be updated in the future again.
 
+
+# Guestfish
+
 Guestfish changes a lot. This guide has been checked for:
 
 * guestfish 1.33.12
@@ -39,16 +42,28 @@ Operating system: CentOS Linux release 7.2.1511 (Core)
 
 ## Uploading a file
 
-``copy-in local [local ...] /remotedir``
+```bash
+copy-in local [local ...] /remotedir
+```
 
 ## ls -l anyone?
 
-``ll``
+```bash
+ll
+```
+
+# Virt-customize
+
+Virt-customize can customize a virtual machine (disk image) by installing packages, editing configuration files, and so on.
 
 ## Setting the password
 
-``virt-customize --format qcow2 -a <image> --root-password password:<pass>``
+```bash
+virt-customize --format qcow2 -a <image> --root-password password:<pass>
+```
 
 ## Installing a package
 
-``virt-customize --format vmdk -a <image> --install /path/to/deb/or/rpm``
+```bash
+virt-customize --format vmdk -a <image> --install /path/to/deb/or/rpm
+```
