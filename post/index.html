@@ -102,6 +102,8 @@
 
 <p>This post is intended to be a guide to some common operations with libguestfs. It will be updated in the future again.</p>
 
+<h1 id="guestfish">Guestfish</h1>
+
 <p>Guestfish changes a lot. This guide has been checked for:</p>
 
 <ul>
@@ -136,19 +138,27 @@ Operating system: CentOS Linux release 7.2.1511 (Core)
 
 <h2 id="uploading-a-file">Uploading a file</h2>
 
-<p><code>copy-in local [local ...] /remotedir</code></p>
+<pre><code class="language-bash">copy-in local [local ...] /remotedir
+</code></pre>
 
 <h2 id="ls-l-anyone">ls -l anyone?</h2>
 
-<p><code>ll</code></p>
+<pre><code class="language-bash">ll
+</code></pre>
+
+<h1 id="virt-customize">Virt-customize</h1>
+
+<p>Virt-customize can customize a virtual machine (disk image) by installing packages, editing configuration files, and so on.</p>
 
 <h2 id="setting-the-password">Setting the password</h2>
 
-<p><code>virt-customize --format qcow2 -a &lt;image&gt; --root-password password:&lt;pass&gt;</code></p>
+<pre><code class="language-bash">virt-customize --format qcow2 -a &lt;image&gt; --root-password password:&lt;pass&gt;
+</code></pre>
 
 <h2 id="installing-a-package">Installing a package</h2>
 
-<p><code>virt-customize --format vmdk -a &lt;image&gt; --install /path/to/deb/or/rpm</code></p>
+<pre><code class="language-bash">virt-customize --format vmdk -a &lt;image&gt; --install /path/to/deb/or/rpm
+</code></pre>
 
                     </div>
                 </section>
