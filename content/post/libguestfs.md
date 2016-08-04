@@ -45,3 +45,10 @@ Operating system: CentOS Linux release 7.2.1511 (Core)
 
 ``ll``
 
+## Setting the password
+
+``virt-customize --format qcow2 -a <image> --root-password password:<pass>``
+
+## Installing a package
+
+``virt-customize --format vmdk -a <image> --install /path/to/deb/or/rpm``
