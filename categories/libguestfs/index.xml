@@ -58,6 +58,14 @@ Operating system: CentOS Linux release 7.2.1511 (Core)
 &lt;h2 id=&#34;ls-l-anyone&#34;&gt;ls -l anyone?&lt;/h2&gt;
 
 &lt;p&gt;&lt;code&gt;ll&lt;/code&gt;&lt;/p&gt;
+
+&lt;h2 id=&#34;setting-the-password&#34;&gt;Setting the password&lt;/h2&gt;
+
+&lt;p&gt;&lt;code&gt;virt-customize --format qcow2 -a &amp;lt;image&amp;gt; --root-password password:&amp;lt;pass&amp;gt;&lt;/code&gt;&lt;/p&gt;
+
+&lt;h2 id=&#34;installing-a-package&#34;&gt;Installing a package&lt;/h2&gt;
+
+&lt;p&gt;&lt;code&gt;virt-customize --format vmdk -a &amp;lt;image&amp;gt; --install /path/to/deb/or/rpm&lt;/code&gt;&lt;/p&gt;
 </description>
     </item>
     
