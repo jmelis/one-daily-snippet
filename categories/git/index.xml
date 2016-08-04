@@ -6,8 +6,25 @@
     <description>Recent content in Git on ONE Daily Snippet</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 28 Jul 2016 00:21:03 +0200</lastBuildDate>
+    <lastBuildDate>Mon, 01 Aug 2016 13:05:11 +0200</lastBuildDate>
     <atom:link href="https://jmelis.github.io/one-daily-snippet/categories/git/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>git</title>
+      <link>https://jmelis.github.io/one-daily-snippet/post/git/</link>
+      <pubDate>Mon, 01 Aug 2016 13:05:11 +0200</pubDate>
+      
+      <guid>https://jmelis.github.io/one-daily-snippet/post/git/</guid>
+      <description>
+
+&lt;p&gt;Some darn git commands I can never remember&amp;hellip;&lt;/p&gt;
+
+&lt;h2 id=&#34;delete-a-remote-tag-or-branch&#34;&gt;Delete a remote tag or branch&lt;/h2&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;$ git push origin --delete &amp;lt;tag or branch&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+</description>
+    </item>
     
     <item>
       <title>git prepare commit msg</title>

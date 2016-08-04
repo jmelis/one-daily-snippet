@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Libguestfs on ONE Daily Snippet</title>
+    <link>https://jmelis.github.io/one-daily-snippet/categories/libguestfs/</link>
+    <description>Recent content in Libguestfs on ONE Daily Snippet</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 01 Aug 2016 09:46:56 +0200</lastBuildDate>
+    <atom:link href="https://jmelis.github.io/one-daily-snippet/categories/libguestfs/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>libguestfs</title>
+      <link>https://jmelis.github.io/one-daily-snippet/post/libguestfs/</link>
+      <pubDate>Mon, 01 Aug 2016 09:46:56 +0200</pubDate>
+      
+      <guid>https://jmelis.github.io/one-daily-snippet/post/libguestfs/</guid>
+      <description>
+
+&lt;p&gt;This post is intended to be a guide to some common operations with libguestfs. It will be updated in the future again.&lt;/p&gt;
+
+&lt;p&gt;Guestfish changes a lot. This guide has been checked for:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;guestfish 1.33.12&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Make sure you read the man page, in particular the commands section to get the commands for your version.&lt;/p&gt;
+
+&lt;h2 id=&#34;opening-a-qcow2-file&#34;&gt;Opening a qcow2 file&lt;/h2&gt;
+
+&lt;p&gt;This is the most basic command.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;$ guestfish -ia &amp;lt;file&amp;gt;.qcow2
+Welcome to guestfish, the guest filesystem shell for
+editing virtual machine filesystems and disk images.
+
+Type: &#39;help&#39; for help on commands
+      &#39;man&#39; to read the manual
+      &#39;quit&#39; to quit the shell
+
+Operating system: CentOS Linux release 7.2.1511 (Core)
+/dev/sda3 mounted on /
+/dev/sda1 mounted on /boot
+
+&amp;gt;&amp;lt;fs&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Use the &lt;code&gt;-i&lt;/code&gt; option to automatically mount the disks from a virtual machine.&lt;/li&gt;
+&lt;li&gt;With &lt;code&gt;-a&lt;/code&gt; you can add a block device or virtual machine image to the shell.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;uploading-a-file&#34;&gt;Uploading a file&lt;/h2&gt;
+
+&lt;p&gt;&lt;code&gt;copy-in local [local ...] /remotedir&lt;/code&gt;&lt;/p&gt;
+
+&lt;h2 id=&#34;ls-l-anyone&#34;&gt;ls -l anyone?&lt;/h2&gt;
+
+&lt;p&gt;&lt;code&gt;ll&lt;/code&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

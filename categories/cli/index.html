@@ -54,6 +54,69 @@
             
             <div class="posts">
                 
+                <h1 class="content-subhead">01 Aug 2016, 09:46</h1>
+                <section class="post">
+                    <header class="post-header">
+
+                        <a href="https://jmelis.github.io/one-daily-snippet/post/libguestfs/" class="post-title">libguestfs</a>
+
+                        <p class="post-meta">
+                            
+                            
+                                
+                                <a class="post-category post-category-cli" href="https://jmelis.github.io/one-daily-snippet/categories/cli">cli</a><a class="post-category post-category-libguestfs" href="https://jmelis.github.io/one-daily-snippet/categories/libguestfs">libguestfs</a>
+                            
+                        </p>
+                    </header>
+
+                    <div class="post-description">
+                        
+
+<p>This post is intended to be a guide to some common operations with libguestfs. It will be updated in the future again.</p>
+
+<p>Guestfish changes a lot. This guide has been checked for:</p>
+
+<ul>
+<li>guestfish 1.33.12</li>
+</ul>
+
+<p>Make sure you read the man page, in particular the commands section to get the commands for your version.</p>
+
+<h2 id="opening-a-qcow2-file">Opening a qcow2 file</h2>
+
+<p>This is the most basic command.</p>
+
+<pre><code class="language-bash">$ guestfish -ia &lt;file&gt;.qcow2
+Welcome to guestfish, the guest filesystem shell for
+editing virtual machine filesystems and disk images.
+
+Type: 'help' for help on commands
+      'man' to read the manual
+      'quit' to quit the shell
+
+Operating system: CentOS Linux release 7.2.1511 (Core)
+/dev/sda3 mounted on /
+/dev/sda1 mounted on /boot
+
+&gt;&lt;fs&gt;
+</code></pre>
+
+<ul>
+<li>Use the <code>-i</code> option to automatically mount the disks from a virtual machine.</li>
+<li>With <code>-a</code> you can add a block device or virtual machine image to the shell.</li>
+</ul>
+
+<h2 id="uploading-a-file">Uploading a file</h2>
+
+<p><code>copy-in local [local ...] /remotedir</code></p>
+
+<h2 id="ls-l-anyone">ls -l anyone?</h2>
+
+<p><code>ll</code></p>
+
+                    </div>
+                </section>
+                
                 <h1 class="content-subhead">28 Jul 2016, 10:47</h1>
                 <section class="post">
                     <header class="post-header">

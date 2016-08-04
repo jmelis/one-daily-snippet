@@ -3,19 +3,19 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Git &middot; ONE Daily Snippet</title>
+    <title>libguestfs &middot; ONE Daily Snippet</title>
 
-    <meta name="description" content="compiled by Bobby Tables">
+    <meta name="description" content="">
 
     <meta name="generator" content="Hugo 0.16" />
     <meta name="twitter:card" content="summary">
     
-    <meta name="twitter:title" content="Git &middot; ONE Daily Snippet">
-    <meta name="twitter:description" content="compiled by Bobby Tables">
+    <meta name="twitter:title" content="libguestfs &middot; ONE Daily Snippet">
+    <meta name="twitter:description" content="">
 
     <meta property="og:type" content="article">
-    <meta property="og:title" content="Git &middot; ONE Daily Snippet">
-    <meta property="og:description" content="compiled by Bobby Tables">
+    <meta property="og:title" content="libguestfs &middot; ONE Daily Snippet">
+    <meta property="og:description" content="">
 
     <link href='//fonts.googleapis.com/css?family=Source+Sans+Pro:400,700|Oxygen:400,700' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/pure/0.6.0/pure-min.css">
@@ -53,83 +53,70 @@
         <div>
             
             <div class="posts">
-                
-                <h1 class="content-subhead">01 Aug 2016, 13:05</h1>
+                <h1 class="content-subhead">01 Aug 2016, 09:46</h1>
                 <section class="post">
                     <header class="post-header">
 
-                        <a href="https://jmelis.github.io/one-daily-snippet/post/git/" class="post-title">git</a>
+                        <a href="https://jmelis.github.io/one-daily-snippet/post/libguestfs/" class="post-title">libguestfs</a>
 
                         <p class="post-meta">
                             
                             
                                 
-                                <a class="post-category post-category-git" href="https://jmelis.github.io/one-daily-snippet/categories/git">git</a>
+                                <a class="post-category post-category-cli" href="https://jmelis.github.io/one-daily-snippet/categories/cli">cli</a><a class="post-category post-category-libguestfs" href="https://jmelis.github.io/one-daily-snippet/categories/libguestfs">libguestfs</a>
                             
                         </p>
                     </header>
-
+                    
                     <div class="post-description">
                         
 
-<p>Some darn git commands I can never remember&hellip;</p>
+<p>This post is intended to be a guide to some common operations with libguestfs. It will be updated in the future again.</p>
 
-<h2 id="delete-a-remote-tag-or-branch">Delete a remote tag or branch</h2>
+<p>Guestfish changes a lot. This guide has been checked for:</p>
 
-<pre><code class="language-bash">$ git push origin --delete &lt;tag or branch&gt;
+<ul>
+<li>guestfish 1.33.12</li>
+</ul>
+
+<p>Make sure you read the man page, in particular the commands section to get the commands for your version.</p>
+
+<h2 id="opening-a-qcow2-file">Opening a qcow2 file</h2>
+
+<p>This is the most basic command.</p>
+
+<pre><code class="language-bash">$ guestfish -ia &lt;file&gt;.qcow2
+Welcome to guestfish, the guest filesystem shell for
+editing virtual machine filesystems and disk images.
+
+Type: 'help' for help on commands
+      'man' to read the manual
+      'quit' to quit the shell
+
+Operating system: CentOS Linux release 7.2.1511 (Core)
+/dev/sda3 mounted on /
+/dev/sda1 mounted on /boot
+
+&gt;&lt;fs&gt;
 </code></pre>
 
-                    </div>
-                </section>
-                
-                <h1 class="content-subhead">28 Jul 2016, 00:21</h1>
-                <section class="post">
-                    <header class="post-header">
+<ul>
+<li>Use the <code>-i</code> option to automatically mount the disks from a virtual machine.</li>
+<li>With <code>-a</code> you can add a block device or virtual machine image to the shell.</li>
+</ul>
 
-                        <a href="https://jmelis.github.io/one-daily-snippet/post/git-prepare-commit-msg/" class="post-title">git prepare commit msg</a>
+<h2 id="uploading-a-file">Uploading a file</h2>
 
-                        <p class="post-meta">
-                            
-                                By <strong class="post-author">Jaime Melis</strong>
-                            
-                            
-                                
-                                <a class="post-category post-category-git" href="https://jmelis.github.io/one-daily-snippet/categories/git">git</a>
-                            
-                        </p>
-                    </header>
+<p><code>copy-in local [local ...] /remotedir</code></p>
 
-                    <div class="post-description">
-                        <p>Forget about adding <em>feature #blablabla</em> to every single commit! and it&rsquo;s free!</p>
+<h2 id="ls-l-anyone">ls -l anyone?</h2>
 
-<pre><code class="language-sh">#!/bin/sh
-
-BRANCH_NAME=$(git symbolic-ref --short HEAD)
-
-if [[ $BRANCH_NAME != bug-* ]] &amp;&amp; [[ $BRANCH_NAME != feature-* ]]; then
-    exit 0
-fi
-
-FIRST_LINE_COMMIT=$(head -n1 $1)
-
-case $FIRST_LINE_COMMIT in
-bug*|Bug*|feature*|Feature*)
-    exit 0
-    ;;
-esac
-
-LABEL=$(echo $BRANCH_NAME|sed 's/-/ #/')
-LABEL=${LABEL^}
-
-sed -i -e &quot;1s/^/${LABEL}: /&quot; $1
-</code></pre>
+<p><code>ll</code></p>
 
                     </div>
+                    
                 </section>
-                
             </div>
-            
-
             <div class="footer">
     <div class="pure-menu pure-menu-horizontal pure-menu-open">
         <ul>
@@ -142,6 +129,7 @@ sed -i -e &quot;1s/^/${LABEL}: /&quot; $1
         </div>
     </div>
 </div>
+
 
 <script>
 (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
