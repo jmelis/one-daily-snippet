@@ -6,8 +6,20 @@
     <description>Recent content on ONE Daily Snippet</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 01 Aug 2016 13:05:11 +0200</lastBuildDate>
+    <lastBuildDate>Tue, 13 Sep 2016 17:08:04 +0200</lastBuildDate>
     <atom:link href="https://jmelis.github.io/one-daily-snippet/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Ruby drivers debugging</title>
+      <link>https://jmelis.github.io/one-daily-snippet/post/rubydebug/</link>
+      <pubDate>Tue, 13 Sep 2016 17:08:04 +0200</pubDate>
+      
+      <guid>https://jmelis.github.io/one-daily-snippet/post/rubydebug/</guid>
+      <description>&lt;p&gt;To enable MAD drivers debug, set &lt;code&gt;ONE_MAD_DEBUG=1&lt;/code&gt; in &lt;code&gt;/etc/one/defaultrc&lt;/code&gt;.&lt;/p&gt;
+
+&lt;p&gt;To see thread related errors, start OpenNebula after doing &lt;code&gt;export RUBYOPT=&amp;quot;-wd&amp;quot;&lt;/code&gt;.&lt;/p&gt;
+</description>
+    </item>
     
     <item>
       <title>git</title>
